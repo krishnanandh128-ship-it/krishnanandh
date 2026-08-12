@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Krishnanand H — Digital Marketing Specialist</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="shortcut icon" href="favicon.svg" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -523,38 +525,53 @@
   }
 
   /* ---- ACHIEVEMENTS ---- */
+  #achievements {
+    text-align: center;
+  }
+
+  .ach-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
   .ach-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
     margin-top: 3rem;
+    justify-content: center;
   }
 
   .ach-card {
     border: 1px solid var(--border);
-    padding: 1.8rem;
+    padding: 2rem 1.8rem;
     background: var(--card);
     display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    transition: border-color 0.25s;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+    transition: border-color 0.25s, transform 0.25s;
   }
 
-  .ach-card:hover { border-color: var(--accent); }
+  .ach-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
 
-  .ach-icon { font-size: 1.6rem; flex-shrink: 0; }
+  .ach-icon { font-size: 2rem; flex-shrink: 0; }
 
   .ach-title {
     font-weight: 500;
-    font-size: 0.92rem;
-    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
     color: var(--text);
   }
 
   .ach-body {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     color: var(--muted);
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   /* ---- CONTACT ---- */
@@ -840,28 +857,30 @@
 
 <!-- ACHIEVEMENTS -->
 <section id="achievements" style="background:var(--bg);">
-  <div class="section-label fade-up">Recognition</div>
-  <h2 class="fade-up">Certifi<em style="font-style:italic; color:var(--accent)">cations</em></h2>
-  <div class="ach-grid fade-up">
-    <div class="ach-card">
-      <div class="ach-icon">🎓</div>
-      <div>
-        <div class="ach-title">Avodha Digital Marketing Certificate</div>
-        <div class="ach-body">Comprehensive digital marketing programme covering SEO, SEM, and social strategy.</div>
+  <div class="ach-container">
+    <div class="section-label fade-up" style="justify-content:center;">Recognition</div>
+    <h2 class="fade-up">Certifi<em style="font-style:italic; color:var(--accent)">cations</em></h2>
+    <div class="ach-grid fade-up">
+      <div class="ach-card">
+        <div class="ach-icon">🎓</div>
+        <div>
+          <div class="ach-title">Avodha Digital Marketing Certificate</div>
+          <div class="ach-body">Comprehensive digital marketing programme covering SEO, SEM, and social strategy.</div>
+        </div>
       </div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">📈</div>
-      <div>
-        <div class="ach-title">Google Ad Measurement Certificate</div>
-        <div class="ach-body">Certified in Google Ads measurement and performance tracking.</div>
+      <div class="ach-card">
+        <div class="ach-icon">📈</div>
+        <div>
+          <div class="ach-title">Google Ad Measurement Certificate</div>
+          <div class="ach-body">Certified in Google Ads measurement and performance tracking.</div>
+        </div>
       </div>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">📊</div>
-      <div>
-        <div class="ach-title">Google Analytics Certificate</div>
-        <div class="ach-body">Proficiency certified in Google Analytics for data-driven decision making.</div>
+      <div class="ach-card">
+        <div class="ach-icon">📊</div>
+        <div>
+          <div class="ach-title">Google Analytics Certificate</div>
+          <div class="ach-body">Proficiency certified in Google Analytics for data-driven decision making.</div>
+        </div>
       </div>
     </div>
   </div>
