@@ -497,6 +497,111 @@
     line-height: 1.7;
   }
 
+  #results {
+    scroll-margin-top: 4rem;
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+    background: var(--surface);
+    border-block: 1px solid var(--border);
+  }
+
+  #results h2 em { color: var(--accent); }
+
+  .results-intro, .result-context { color: #aeabb4; line-height: 1.6; }
+  .results-intro { max-width: 34rem; }
+
+  .results-overview {
+    display: grid;
+    grid-template-columns: 1.6fr repeat(2, 1fr);
+    margin-block: 2rem 1rem;
+    border-block: 1px solid var(--border);
+    background: linear-gradient(110deg, rgba(232,194,122,0.09), transparent 72%);
+  }
+
+  .results-overview > div {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    padding: 1.35rem clamp(0.8rem, 3vw, 2rem);
+  }
+
+  .results-overview > div + div { border-inline-start: 1px solid var(--border); }
+
+  .results-overview dd, .result-metrics dd {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-variant-numeric: lining-nums tabular-nums;
+    line-height: 1.1;
+  }
+
+  .results-overview dd { font-size: clamp(1.8rem, 4.5vw, 3.6rem); }
+  .results-overview > div:first-child dd, .result-growth { color: var(--accent); }
+
+  .results-overview dt, .result-metrics dt {
+    color: #aeabb4;
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .results-grid { display: grid; gap: 1rem; }
+
+  .result-card {
+    min-width: 0;
+    padding: clamp(1rem, 2.7vw, 2rem);
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+
+  .result-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+  }
+
+  .result-context { font-size: 0.85rem; }
+
+  .result-metrics {
+    display: grid;
+    grid-template-columns: 1.15fr repeat(2, 1fr);
+    gap: 0.65rem;
+    margin-block: 1.2rem;
+    padding-block: 1rem;
+    border-block: 1px solid var(--border);
+  }
+
+  .result-metrics > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 0.35rem; }
+  .result-metrics dd { font-size: clamp(1.25rem, 2.5vw, 1.8rem); }
+  .result-card h4 { margin-bottom: 0.65rem; font-size: 0.85rem; font-weight: 500; }
+
+  .result-keywords { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; }
+
+  .result-keywords li {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: #ded9d0;
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    .results-overview { grid-template-columns: repeat(2, 1fr); }
+    .results-overview > div:first-child { grid-column: 1 / -1; border-bottom: 1px solid var(--border); }
+    .results-overview > div:nth-child(2) { border-inline-start: 0; }
+  }
+
+  @media (min-width: 720px) {
+    .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .result-card:last-child { grid-column: 1 / -1; }
+  }
+
+  @media (min-width: 1100px) {
+    .results-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .result-card:nth-child(-n+2) { grid-column: span 3; }
+    .result-card:nth-child(n+3) { grid-column: span 2; }
+  }
+
   /* ---- TOOLS ---- */
   #tools { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -672,6 +777,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#results">SEO Results</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -685,7 +791,7 @@
     <p class="hero-sub">SEO strategist and digital growth specialist with 3+ years of experience turning organic search into measurable business outcomes across global markets.</p>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-primary">Let's Connect</a>
-      <a href="#projects" class="btn btn-outline">View Work</a>
+      <a href="#results" class="btn btn-outline">View SEO Results</a>
     </div>
   </div>
   <div class="hero-photo">
@@ -796,6 +902,109 @@
         <p style="color:var(--muted); font-size:0.9rem; line-height:1.75;">Executed comprehensive digital marketing campaigns across SEO, SEM, and SMM for diverse clients. Managed analytics, keyword research, competitor analysis, and performance reporting.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="results" aria-labelledby="results-title">
+  <div class="section-label">SEO Results</div>
+  <h2 id="results-title">Organic Traffic <em>Growth</em></h2>
+  <p class="results-intro">Monthly organic search clicks from Google Search Console, combined across the five projects below.</p>
+  <dl class="results-overview">
+    <div><dt>Combined monthly organic clicks</dt><dd>5,050</dd></div>
+    <div><dt>Projects measured</dt><dd>5</dd></div>
+    <div><dt>Page 1 keyword rankings</dt><dd>25</dd></div>
+  </dl>
+  <div class="results-grid">
+    <article class="result-card">
+      <span class="project-tag">Page 1 Rankings</span>
+      <h3>LantenStay Resort</h3>
+      <p class="result-context">Hospitality · Resort · Wayanad, Kerala</p>
+      <dl class="result-metrics">
+        <div><dt>Organic traffic growth</dt><dd class="result-growth">+717%</dd></div>
+        <div><dt>Ranked keywords</dt><dd>5</dd></div>
+        <div><dt>Clicks / month</dt><dd>980</dd></div>
+      </dl>
+      <h4>Ranked keywords</h4>
+      <ul class="result-keywords" role="list">
+        <li>forest resort in Wayanad</li>
+        <li>jungle resort in Wayanad</li>
+        <li>tent stay in Wayanad</li>
+        <li>camping in Wayanad</li>
+        <li>tree house Wayanad</li>
+      </ul>
+    </article>
+    <article class="result-card">
+      <span class="project-tag">Page 1 Rankings</span>
+      <h3>Metcon TMT</h3>
+      <p class="result-context">Manufacturing · Steel · Kerala, India</p>
+      <dl class="result-metrics">
+        <div><dt>Organic traffic growth</dt><dd class="result-growth">+383%</dd></div>
+        <div><dt>Ranked keywords</dt><dd>5</dd></div>
+        <div><dt>Clicks / month</dt><dd>1,450</dd></div>
+      </dl>
+      <h4>Ranked keywords</h4>
+      <ul class="result-keywords" role="list">
+        <li>TMT steel bar</li>
+        <li>TMT Bar company</li>
+        <li>TMT Bar manufacturer</li>
+        <li>TMT bar suppliers</li>
+        <li>TMT Bar Weight Calculator</li>
+      </ul>
+    </article>
+    <article class="result-card">
+      <span class="project-tag">Page 1 Rankings</span>
+      <h3>NMSD Parts</h3>
+      <p class="result-context">Automotive · Spare Parts · Dubai, UAE</p>
+      <dl class="result-metrics">
+        <div><dt>Organic traffic growth</dt><dd class="result-growth">+667%</dd></div>
+        <div><dt>Ranked keywords</dt><dd>3</dd></div>
+        <div><dt>Clicks / month</dt><dd>690</dd></div>
+      </dl>
+      <h4>Ranked keywords</h4>
+      <ul class="result-keywords" role="list">
+        <li>car spare parts in dubai</li>
+        <li>opel Spare Parts in Dubai</li>
+        <li>chrysler Spare Parts in Dubai</li>
+      </ul>
+    </article>
+    <article class="result-card">
+      <span class="project-tag">Page 1 Rankings</span>
+      <h3>Looptales</h3>
+      <p class="result-context">Advertising · Photography · Kuwait</p>
+      <dl class="result-metrics">
+        <div><dt>Organic traffic growth</dt><dd class="result-growth">+780%</dd></div>
+        <div><dt>Ranked keywords</dt><dd>10</dd></div>
+        <div><dt>Clicks / month</dt><dd>1,320</dd></div>
+      </dl>
+      <h4>Ranked keywords</h4>
+      <ul class="result-keywords" role="list">
+        <li>Advertising Agency in Kuwait</li>
+        <li>Headshot Photographer In Kuwait</li>
+        <li>Marketing Agency in Kuwait</li>
+        <li>Wedding photographer in Kuwait</li>
+        <li>Photography Agency in Kuwait</li>
+        <li>Digital Marketing Agency In Kuwait</li>
+        <li>freelance photographer kuwait</li>
+        <li>photographers in Kuwait</li>
+        <li>Digital Marketing In Kuwait</li>
+        <li>Photo Studio in Kuwait</li>
+      </ul>
+    </article>
+    <article class="result-card">
+      <span class="project-tag">Page 1 Rankings</span>
+      <h3>Into The Roots Resort</h3>
+      <p class="result-context">Hospitality · Family Resort · Kochi, Kerala</p>
+      <dl class="result-metrics">
+        <div><dt>Organic traffic growth</dt><dd class="result-growth">+663%</dd></div>
+        <div><dt>Ranked keywords</dt><dd>2</dd></div>
+        <div><dt>Clicks / month</dt><dd>610</dd></div>
+      </dl>
+      <h4>Ranked keywords</h4>
+      <ul class="result-keywords" role="list">
+        <li>Best Family Resort in Kochi</li>
+        <li>Resort in Kochi For Family</li>
+      </ul>
+    </article>
   </div>
 </section>
 
